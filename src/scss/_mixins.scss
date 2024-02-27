@@ -1,0 +1,57 @@
+@import "./cta.scss";
+
+@mixin container($container-width: 1400px){
+    width: $container-width;
+    margin: 0 auto;
+}
+@mixin flex-row($justify: space-between, $align: center) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+@mixin grid-6x5 {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(5, auto);
+    gap: 10px;
+}
+@mixin grid-4-cards-2-rows {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+    gap: 15px;
+}
+@mixin ghoul-animation($rotate: 0deg) {
+    @keyframes ghoul-animation {
+        0% {
+            transform: rotate($rotate);
+            -webkit-transform: rotate($rotate);
+            -moz-transform: rotate($rotate);
+            -ms-transform: rotate($rotate);
+            -o-transform: rotate($rotate);
+}
+        25% {
+            transform: rotate($rotate + 5deg);
+            -webkit-transform: rotate($rotate + 5deg);
+            -moz-transform: rotate($rotate + 5deg);
+            -ms-transform: rotate($rotate + 5deg);
+            -o-transform: rotate($rotate + 5deg);
+}
+        75% {
+            transform: rotate($rotate - 5deg);
+            -webkit-transform: rotate($rotate - 5deg);
+            -moz-transform: rotate($rotate - 5deg);
+            -ms-transform: rotate($rotate - 5deg);
+            -o-transform: rotate($rotate - 5deg);
+}
+        100% {
+            transform: rotate($rotate);
+            -webkit-transform: rotate($rotate);
+            -moz-transform: rotate($rotate);
+            -ms-transform: rotate($rotate);
+            -o-transform: rotate($rotate);
+}
+    }
+    animation: ghoul-animation 2s linear infinite;
+    -webkit-animation: ghoul-animation 2s linear infinite;
+}

@@ -1,0 +1,22 @@
+@mixin nft_card(){
+    padding-top: 0.9rem;
+    padding: 0.9rem 1rem;
+    margin-right: 4.2rem;
+    width: 28.1rem;
+    height: 40.2rem;
+    border-radius: 23.479px;
+    background: var(--Others-White, #fff);
+    box-shadow: 38.817px 11.763px 58.813px 0px rgba(199, 199, 199, 0.6);
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    &:active {
+        transform: translateY(-2px);
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+}

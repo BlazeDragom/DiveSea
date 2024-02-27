@@ -1,0 +1,223 @@
+@import "../../mixins.scss";
+@import "../../cta.scss";
+@import "../../templates/card.scss";
+@import "../../templates/btn.scss";
+footer {
+    background: #141416;
+    .footer_container {
+        margin: 0 auto;
+        max-width: 1400px;
+        @media (max-width: 1024px) {
+            max-width: 880px;
+        }
+        @media (max-width: 400px) {
+            display: none;
+        }
+
+        @media (max-width: 800px) {
+            max-width: 80%;
+        }
+        .footer_top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 3.7rem;
+            .logo {
+                .logo_text {
+                    color: #fff;
+                    font-family: Poppins;
+                    font-size: 29.922px;
+                    font-weight: 600;
+                    line-height: 130%;
+                }
+            }
+            .nav_footer {
+                .nav_link {
+                    color: #b9b9b9;
+                    font-family: Inter;
+                    font-size: 17.829px;
+                    font-weight: 500;
+                    line-height: 150%;
+                    text-transform: capitalize;
+                    margin-right: 7rem;
+                    text-decoration: none;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    @media (max-width: 1024px) {
+                        font-size: 12.679px;
+                        margin-right: 4.9rem;
+                    }
+
+                    @media (max-width: 800px) {
+                        font-size: 12px;
+                        margin-right: 4rem;
+                    }
+
+                    @media (max-width: 600px) {
+                        font-size: 11px;
+                        margin-right: 3.5rem;
+                    }
+                }
+            }
+        }
+        hr {
+            margin-bottom: 5.7rem;
+        }
+        .footer_bottom {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding-bottom: 8.2rem;
+            .bottom_rights {
+                .rights_text {
+                    color: #999;
+                    font-family: Inter;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 147.059%;
+                    @media (max-width: 1024px) {
+                        font-size: 14px;
+                    }
+
+                    @media (max-width: 800px) {
+                        font-size: 13px;
+                    }
+
+                    @media (max-width: 600px) {
+                        font-size: 12px;
+                    }
+                }
+            }
+            .footer_links {
+                a,
+                i {
+                    font-size: 2.1rem;
+                    color: gray;
+                    margin-right: 5.3rem;
+                    transition: 0.3s ease-in;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+
+                    @media (max-width: 1024px) {
+                        font-size: 1.5rem;
+                        margin-right: 3.7rem;
+                    }
+
+                    @media (max-width: 800px) {
+                        font-size: 1.4rem;
+                        margin-right: 3.5rem;
+                    }
+
+                    @media (max-width: 600px) {
+                        font-size: 1.3rem;
+                        margin-right: 3rem;
+                    }
+                }
+            }
+        }
+    }
+    .footer_mobile__container {
+        margin: 0 auto;
+        width: 310px;
+        display: none; 
+        @media (max-width: 400px) {
+            display: block;
+        }
+        .footer_top {
+            display: flex;
+            margin-bottom: 3.2rem;
+            .top_wrapper {
+                .logo {
+                    margin-bottom: 5.8rem;
+                    .logo_text {
+                        color: #fff;
+                        font-family: Poppins;
+                        font-size: 20.012px;
+                        font-weight: 600;
+                        line-height: 130%; /* 26.016px */
+                    }
+                }
+                .nav_footer {
+                    .nav_link {
+                        color: #b9b9b9;
+                        font-family: Inter;
+                        font-size: 14px;
+                        font-weight: 500;
+                        line-height: 134.887%; /*  */
+                        text-transform: uppercase;
+                        margin-bottom: 3rem;
+                        text-decoration: none;
+                        &:last-child {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+            }
+            .footer_links{
+                a,
+                i {
+                    font-size: 1.6rem;
+                    color: gray;
+                    margin-right: 2rem;
+                    transition: 0.3s ease-in;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    &:hover {
+                        color: white;
+                    }
+                }
+            }
+        }
+        .footer_bottom{
+            .bottom_rights {
+                .rights_text {
+                    color: #999;
+                    font-family: Inter;
+                    font-size: 17px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: 147.059%;
+                }
+            }
+        }
+    }
+}
+@media (max-width: 600px) {
+    .footer_container {
+        display: flex;
+    }
+    hr {
+        display: none;
+    }
+    .footer_top,
+    .footer_bottom {
+        flex-direction: column;
+        .nav_footer {
+            display: flex;
+            flex-direction: column;
+            .nav_footer {
+                color: #b9b9b9;
+                font-family: Inter;
+                font-size: 14px;
+                font-weight: 500;
+                line-height: 134.887%; /*  */
+                text-transform: uppercase;
+                margin-bottom: 3rem;
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

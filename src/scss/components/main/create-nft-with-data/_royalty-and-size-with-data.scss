@@ -1,0 +1,139 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.royalty-and-size {
+    display: flex;
+    gap: 3.5rem;
+    .royalty-holder {
+        position: relative;
+        .royalty {
+            font-size: $font-size-medium;
+            font-weight: 500;
+        }
+        .dropdown-holder {
+            margin-top: 2rem;
+            &:hover .order-dropdown {
+                display: block;
+            }
+            .royalty_dropdown {
+                display: block;
+                padding: 2rem;
+                border: 1.5px solid $color-black;
+                border-radius: $border-raduis-input;
+
+                background-color: #fff;
+                font-size: $font-size-regular;
+                transition: $transition-fast $ease-out;
+                &:hover {
+                    transform: scale(1.05);
+                    -webkit-transform: scale(1.05);
+                    -moz-transform: scale(1.05);
+                    -ms-transform: scale(1.05);
+                    -o-transform: scale(1.05);
+                    border: 2px solid $color-black;
+                }
+            }
+            .order-dropdown {
+                display: none;
+                position: absolute;
+                z-index: 4;
+                top: 9rem;
+                padding: 2rem;
+                background-color: $color-light-slate-gray;
+                border-radius: $border-raduis-input;
+                box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: 0.1);
+                li {
+                    margin-bottom: 0.5rem;
+                    a {
+                        font-size: $font-size-regular;
+                        transition: $transition-fast $ease-out;
+                        &:hover {
+                            color: $color-light-gray;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .size-holder {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 3.5rem;
+        .size {
+            margin-bottom: 2rem;
+            font-size: $font-size-medium;
+            font-weight: 500;
+        }
+        .size_input {
+            border: none;
+            outline: none;
+            flex-basis: fill;
+
+            padding: 2rem;
+
+            border: 1.5px solid $color-black;
+            border-radius: $border-raduis-input;
+
+            background-color: #fff;
+
+            font-size: $font-size-regular;
+            transition: $transition-fast $ease-out;
+            &:hover {
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .royalty-and-size {
+        .royalty-holder {
+            .royalty {
+                font-size: $font-size-tablet-medium;
+            }
+            .dropdown-holder {
+                margin-top: 1.4rem;
+            }
+        }
+        .size-holder {
+            margin-bottom: 2.4rem;
+            .size {
+                margin-bottom: 1.4rem;
+                font-size: $font-size-tablet-medium;
+            }
+            input {
+                font-size: $font-size-tablet-regular;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .royalty-and-size {
+        gap: 2.2rem;
+        .royalty-holder {
+            .royalty {
+                font-size: $font-size-phone-medium;
+            }
+            .dropdown-holder {
+                .royalty_dropdown {
+                    font-size: $font-size-phone-regular;
+                }
+            }
+        }
+        .size-holder {
+            .size {
+                margin-bottom: 1.4rem;
+                font-size: $font-size-phone-medium;
+            }
+            input {
+                font-size: $font-size-phone-regular;
+            }
+        }
+    }
+}

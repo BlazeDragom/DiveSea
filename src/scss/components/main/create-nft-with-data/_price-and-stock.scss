@@ -1,0 +1,221 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.price-and-stock {
+    display: flex;
+    justify-content: space-between;
+    gap: 3.5rem;
+    margin-bottom: 7rem;
+    .price_holder {
+        width: 65rem;
+        .price {
+            font-weight: 500;
+            font-size: $font-size-medium;
+        }
+        .price-about {
+            display: flex;
+            margin-top: 2rem;
+            background-color: #fff;
+            border-radius: $border-raduis-input;
+            transition: $transition-fast $ease-out;
+            &:hover {
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+            }
+
+            .price-dropdown_holder {
+                position: relative;
+                &:hover .order_dropdown {
+                    display: block;
+                }
+                .price_dropdown {
+                    display: block;
+                    padding: 2rem;
+                    width: 11rem;
+                    background-color: #fff;
+                    font-size: $font-size-regular;
+                    transition: $transition-fast $ease-out;
+                    border-top-left-radius: $border-raduis-input;
+                    border-bottom-left-radius: $border-raduis-input;
+
+                    border-top: 1.5px solid $color-black;
+                        border-left: 1.5px solid $color-black;
+                        border-bottom: 1.5px solid $color-black;
+                    i {
+                        margin-left: 2rem;
+                    }
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 3rem;
+                        right: -1.6rem;
+                        width: 3.5rem;
+                        height: 0.1rem;
+                        background-color: $color-light-gray;
+                        transform: rotate(90deg);
+                    }
+                    
+                }
+                .order_dropdown {
+                    display: none;
+                    position: absolute;
+                    top: 4rem;
+                    padding: 2rem;
+                    background-color: $color-light-slate-gray;
+                    border-radius: $border-raduis-input;
+                    box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: 0.1);
+                    li {
+                        margin-bottom: 0.5rem;
+                        a {
+                            font-size: $font-size-regular;
+                            transition: $transition-fast $ease-out;
+                            &:hover {
+                                color: $color-light-gray;
+                            }
+                        }
+                    }
+                }
+            }
+            .price_input {
+                border: none;
+                outline: none;
+                width: 100%;
+                padding: 2rem;
+
+                border-top: 1.5px solid $color-black;
+                border-right: 1.5px solid $color-black;
+                border-bottom: 1.5px solid $color-black;
+
+                background-color: #fff;
+
+                border-top-right-radius: $border-raduis-input;
+                border-bottom-right-radius: $border-raduis-input;
+
+                font-size: $font-size-regular;
+                transition: $transition-fast $ease-out;
+            }
+        }
+    }
+    .stock_holder {
+        position: relative;
+        width: 16rem;
+        &:hover .order-dropdown {
+            display: block;
+        }
+        .stock {
+            font-size: $font-size-medium;
+            font-weight: 500;
+        }
+        .stock_dropdown {
+            display: block;
+            margin-top: 2rem;
+            padding: 2rem;
+
+            background-color: #fff;
+
+            border: 1px solid $color-black;
+            border-radius: $border-raduis-input;
+
+            font-size: $font-size-regular;
+            font-weight: 500;
+            color: $color-black;
+
+            transition: $transition-fast $ease-out;
+            i {
+                margin-left: 6rem;
+            }
+            &:hover {
+                transform: scale(1.05);
+                -webkit-transform: scale(1.05);
+                -moz-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                -o-transform: scale(1.05);
+            }
+        }
+        .order-dropdown {
+            display: none;
+            position: absolute;
+            top: 8rem;
+            padding: 2rem;
+            background-color: $color-light-slate-gray;
+            border-radius: $border-raduis-input;
+            box-shadow: 2px 4px 8px rgba($color: #000000, $alpha: 0.1);
+            li {
+                margin-bottom: 0.5rem;
+                a {
+                    font-size: $font-size-regular;
+                    transition: $transition-fast $ease-out;
+                    &:hover {
+                        color: $color-light-gray;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .price-and-stock {
+        .price_holder {
+            width: 34.9rem;
+        }
+        .stock_holder {
+            width: 12.1rem;
+            .stock_dropdown {
+                i {
+                    margin-left: 4rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .price-and-stock {
+        gap: 2.2rem;
+        justify-content: start;
+        .price_holder {
+            width: 18rem;
+            .price {
+                font-size: $font-size-phone-medium;
+            }
+            .price-about {
+                margin-top: 1.4rem;
+                .price-dropdown_holder {
+                    display: flex;
+                    align-items: center;
+                    .price_dropdown {
+                        width: 6rem;
+                        padding: 2rem 1.2rem;
+                        font-size: $font-size-phone-regular;
+                        i {
+                            margin-left: 1rem;
+                        }
+                        &::after{
+                            top: 2.5rem;
+                        }
+                    }
+                }
+                .price_input {
+                    width: 11.8rem;
+                    font-size: $font-size-phone-regular;
+                }
+            }
+        }
+        .stock_holder {
+            width: 11rem;
+            .stock {
+                font-size: $font-size-phone-medium;
+            }
+            .stock_dropdown {
+                margin-top: 1.4rem;
+                padding: 2rem 1.2rem;
+                font-size: $font-size-phone-regular;
+            }
+        }
+    }
+}

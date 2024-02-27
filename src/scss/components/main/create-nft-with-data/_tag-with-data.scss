@@ -1,0 +1,59 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.tags-holder {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+    .tags {
+        margin-bottom: 2rem;
+        font-size: $font-size-medium;
+        font-weight: 500;
+    }
+    .tags_input {
+        border: none;
+        outline: none;
+        flex-basis: fill;
+
+        padding: 2rem;
+
+        border: 1.5px solid $color-black;
+        border-radius: $border-raduis-input;
+
+        background-color: #fff;
+
+        font-size: $font-size-regular;
+        transition: $transition-fast $ease-out;
+        &:hover {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .tags-holder {
+        .tags {
+            font-size: $font-size-tablet-medium;
+            margin-bottom: 1.4rem;
+        }
+        input {
+            font-size: $font-size-tablet-regular;
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .tags-holder {
+        .tags {
+            font-size: $font-size-phone-medium;
+        }
+        input {
+            font-size: $font-size-phone-regular;
+        }
+    }
+}

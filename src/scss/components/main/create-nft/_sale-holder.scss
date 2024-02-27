@@ -1,0 +1,330 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.put-sale_holder {
+    display: flex;
+    justify-content: space-between;
+    .put_content {
+        .title {
+            font-size: $font-size-medium;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+        .text {
+            font-size: $font-size-regular;
+            color: $color-slate-gray;
+        }
+    }
+    .put_toggle_btn {
+        position: relative;
+        .toggle_button {
+            position: relative;
+            z-index: 3;
+            display: inline-block;
+            width: 5.5rem;
+            height: 3rem;
+            margin: 0;
+            vertical-align: top;
+            background: #e7e4e4;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            &:after {
+                content: "";
+                display: inline-block;
+                position: absolute;
+                left: 0.5rem;
+                top: 0.5rem;
+                font-size: $font-size-large;
+                width: 2rem;
+                height: 2rem;
+                background-color: $color-black;
+                border-radius: 50%;
+                transform: translateX(0);
+                transition: $transition-fast $ease-out;
+                -webkit-transform: translateX(0);
+                -moz-transform: translateX(0);
+                -ms-transform: translateX(0);
+                -o-transform: translateX(0);
+            }
+            &:checked {
+                background-color: $color-black;
+            }
+            &:checked::after {
+                transform: translateX(calc(100% + 3px));
+                background-color: #fff;
+            }
+        }
+        .toggle-btn_image {
+            img {
+                opacity: 0;
+                width: 13rem;
+                position: absolute;
+                z-index: 2;
+                pointer-events: none;
+                transition: $transition-fast $ease-out;
+                &:nth-child(1) {
+                    top: 0rem;
+                    left: -4rem;
+                    transform: rotate(90deg);
+                    -webkit-transform: rotate(0deg);
+                    -moz-transform: rotate(90deg);
+                    -ms-transform: rotate(90deg);
+                    -o-transform: rotate(90deg);
+                }
+                &:nth-child(2) {
+                    top: -2rem;
+                    left: -4rem;
+                    transform: rotate(0deg);
+                    -webkit-transform: rotate(0deg);
+                    -moz-transform: rotate(0deg);
+                    -ms-transform: rotate(0deg);
+                    -o-transform: rotate(0deg);
+                }
+                &:nth-child(3) {
+                    top: -3rem;
+                    left: -6rem;
+                    transform: rotate(240deg);
+                    -webkit-transform: rotate(240deg);
+                    -moz-transform: rotate(240deg);
+                    -ms-transform: rotate(240deg);
+                    -o-transform: rotate(240deg);
+                }
+                &:nth-child(4) {
+                    top: -2rem;
+                    left: -2rem;
+                    transform: rotate(140deg);
+                    -webkit-transform: rotate(140deg);
+                    -moz-transform: rotate(140deg);
+                    -ms-transform: rotate(140deg);
+                    -o-transform: rotate(140deg);
+                }
+            }
+        }
+        .toggle_button:checked + .toggle-btn_image img {
+            opacity: 1;
+            &:nth-child(1) {
+                top: -4.6rem;
+                left: -3.8rem;
+                transform: rotate(120deg);
+                -webkit-transform: rotate(120deg);
+                -moz-transform: rotate(120deg);
+                -ms-transform: rotate(120deg);
+                -o-transform: rotate(120deg);
+                @include ghoul-animation(120deg);
+            }
+            &:nth-child(2) {
+                top: -4rem;
+                left: -1rem;
+                transform: rotate(140deg);
+                -webkit-transform: rotate(140deg);
+                -moz-transform: rotate(140deg);
+                -ms-transform: rotate(140deg);
+                -o-transform: rotate(140deg);
+                @include ghoul-animation(140deg);
+            }
+            &:nth-child(3) {
+                top: -1rem;
+                left: -4rem;
+                transform: rotate(369deg);
+                -webkit-transform: rotate(369deg);
+                -moz-transform: rotate(369deg);
+                -ms-transform: rotate(369deg);
+                -o-transform: rotate(369deg);
+                @include ghoul-animation(369deg);
+            }
+            &:nth-child(4) {
+                top: -1rem;
+                left: -2rem;
+                transform: rotate(-10deg);
+                -webkit-transform: rotate(-10deg);
+                -moz-transform: rotate(-10deg);
+                -ms-transform: rotate(-10deg);
+                -o-transform: rotate(-10deg);
+                @include ghoul-animation(-10deg);
+            }
+        }
+    }
+}
+.direct-sale_holder {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 4rem;
+    .direct_content {
+        .title {
+            font-size: $font-size-medium;
+            font-weight: 500;
+            margin-bottom: 1.2rem;
+        }
+        .text {
+            font-size: $font-size-regular;
+            color: $color-slate-gray;
+        }
+    }
+    .direct_toggle_btn {
+        .toggle_button {
+            position: relative;
+            display: inline-block;
+            width: 5.5rem;
+            height: 3rem;
+            margin: 0;
+            vertical-align: top;
+            background: #e7e4e4;
+            border-radius: 30px;
+            outline: none;
+            cursor: pointer;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            &:after {
+                content: "";
+
+                display: inline-block;
+                position: absolute;
+                left: 0.5rem;
+                top: 0.5rem;
+
+                width: 2rem;
+                height: 2rem;
+                background-color: $color-black;
+                border-radius: 50%;
+
+                transform: translateX(0);
+                transition: $transition-fast $ease-out;
+            }
+            &:checked {
+                background-color: $color-black;
+            }
+            &:checked::after {
+                transform: translateX(calc(1000% + 3px));
+                background-color: #fff;
+            }
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .put-sale_holder {
+        .put_content {
+            .title {
+                font-size: $font-size-tablet-medium;
+            }
+            .text {
+                font-size: $font-size-tablet-regular;
+            }
+        }
+        .put_toggle_btn {
+            .toggle_button {
+                width: 3.9rem;
+                height: 2.1rem;
+                &:after {
+                    width: 1.422rem;
+                    height: 1.422rem;
+                    top: 0.356rem;
+                    left: 0.355rem;
+                }
+            }
+            .toggle_button:checked + .toggle-btn_image img {
+                &:nth-child(2) {
+                    top: -4rem;
+                    left: -2.5rem;
+                }
+                &:nth-child(3) {
+                    top: -1rem;
+                    left: -4rem;
+                    transform: rotate(370deg);
+                    -webkit-transform: rotate(370deg);
+                    -moz-transform: rotate(370deg);
+                    -ms-transform: rotate(370deg);
+                    -o-transform: rotate(370deg);
+                    @include ghoul-animation(370deg);
+                }
+                &:nth-child(4) {
+                    top: -2rem;
+                    left: -3rem;
+                }
+            }
+        }
+    }
+    .direct-sale_holder {
+        .direct_content {
+            .title {
+                font-size: $font-size-tablet-medium;
+            }
+            .text {
+                font-size: $font-size-tablet-regular;
+            }
+        }
+        .direct_toggle_btn {
+            .toggle_button {
+                width: 3.9rem;
+                height: 2.1rem;
+                &:after {
+                    width: 1.422rem;
+                    height: 1.422rem;
+                    top: 0.356rem;
+                    left: 0.355rem;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width:375px) {
+    .put-sale_holder {
+        .put_content {
+            .title {
+                font-size: $font-size-phone-medium;
+            }
+            .text {
+                font-size: $font-size-phone-regular;
+            }
+        }
+        .put_toggle_btn {
+            .toggle_button {
+                width: 3.9rem;
+                height: 2.1rem;
+                &:after {
+                    width: 1.422rem;
+                    height: 1.422rem;
+                    top: 0.356rem;
+                    left: 0.355rem;
+                }
+            }
+            .toggle_button:checked + .toggle-btn_image img {
+                &:nth-child(2) {
+                    top: -4rem;
+                    left: -2.5rem;
+                }
+                &:nth-child(3) {
+                    top: -1rem;
+                    left: -4rem;
+                    transform: rotate(370deg);
+                    -webkit-transform: rotate(370deg);
+                    -moz-transform: rotate(370deg);
+                    -ms-transform: rotate(370deg);
+                    -o-transform: rotate(370deg);
+                    @include ghoul-animation(370deg);
+                }
+                &:nth-child(4) {
+                    top: -2rem;
+                    left: -3rem;
+                }
+            }
+        }
+    }
+    .direct-sale_holder {
+        .direct_content {
+            .title {
+                font-size: $font-size-phone-medium;
+            }
+            .text {
+                font-size: $font-size-phone-regular;
+            }
+        }
+    }
+}

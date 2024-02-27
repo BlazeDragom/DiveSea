@@ -1,0 +1,97 @@
+@import "../../cta.scss";
+@import "../../mixins.scss";
+@import "../../templates/btn.scss";
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4rem;
+    .add-image-holder {
+        .add-image_container {
+            flex-wrap: wrap;
+            gap: 10.5rem;
+            @include flex-row(center, center);
+            width: 46.8rem;
+            height: 41.3rem;
+            flex-direction: column;
+            margin-bottom: 5.7rem;
+            text-align: center;
+            border-radius: 30.744px;
+            background: var(--Neutrals-8, #fcfcfd);
+            box-shadow:
+                0px 81.985px 81.985px -61.489px rgba(15, 15, 15, 0.15),
+                0px -81.98px 80px 0px rgba(0, 0, 0, 0.05);
+            transition: $transition-slow $ease-out;
+            .add-image {
+                @include flex-row(center, center);
+                flex-direction: column;
+                width: 100%;
+                height: 100%;
+                cursor: pointer;
+                i {
+                    margin-bottom: 1.2rem;
+                    font-size: 5rem;
+                }
+                .text {
+                    width: 17rem;
+                    font-size: $font-size-xsmall-plus;
+                    color: #777e90;
+                }
+            }
+            input {
+                opacity: 0;
+                height: 0;
+            }
+            img {
+                border-radius: 30.744px;
+                width: 100%;
+                height: 100%;
+            }
+            &:hover {
+                transform: translateY(-2rem);
+                -webkit-transform: translateY(-2rem);
+                -moz-transform: translateY(-2rem);
+                -ms-transform: translateY(-2rem);
+                -o-transform: translateY(-2rem);
+            }
+        }
+        input {
+            opacity: 0;
+            height: 0;
+        }
+    }
+    .btn--upload {
+        @include main_btn(32.7rem);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .right-content {
+        .add-image-holder {
+            .add-image_container {
+                width: 33.2rem;
+                height: 29.3rem;
+            }
+        }
+        .btn--upload {
+            @include main_btn(23.2rem, 10.67px);
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .right-content {
+        width: 31rem;
+        .add-image-holder {
+            .add-image_container {
+                gap: 4rem;
+                width: 31rem;
+                height: 37.5rem;
+            }
+        }
+        .btn--upload {
+            @include main_btn(22.4rem, 14.25px);
+        }
+    }
+}

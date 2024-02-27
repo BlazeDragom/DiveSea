@@ -1,0 +1,34 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.left-content {
+    border: none;
+    width: 90rem;
+    margin-bottom: 21rem;
+
+    .create_btn {
+        margin-top: 11rem;
+        @include main_btn(100%);
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .left-content {
+        width: 50rem;
+
+        .create_btn {
+            @include main_btn(100%, 11.38px);
+        }
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .left-content {
+        width: 31rem;
+        
+        .create_btn {
+            @include main_btn(100%, 14.25px);
+        }
+    }
+}

@@ -1,0 +1,319 @@
+@import "../../mixins.scss";
+@import "../../cta.scss";
+@import "../../templates/btn.scss";
+.header {
+    padding-top: 4.8rem;
+    .header_container {
+        width: 1400px;
+        margin: 0 auto;
+        .header_top {
+            @include flex-row();
+            .nav {
+                .nav_link {
+                    color: #606060;
+                    font-family: "Inter", sans-serif;
+                    display: inline-block;
+                    position: relative;
+                    font-size: $font-size-small-unique;
+                    font-weight: 500;
+                    line-height: 2.6rem;
+                    text-transform: uppercase;
+                    margin-right: 5.3rem;
+                    overflow: hidden;
+                    text-decoration: none;
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                    &:hover {
+                        &::after {
+                            transform: scaleX(1);
+                        }
+                    }
+
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 2px;
+                        background: linear-gradient(to right, #ff4b2b, #ff416c);
+                        transform: scaleX(0);
+                        transform-origin: bottom right;
+                        transition: transform 0.3s ease-out;
+                    }
+                }
+            }
+        }
+        .header_interactive {
+            display: flex;
+            align-items: center;
+            .search-container {
+                background: #fff;
+                height: 5.7rem;
+                border-radius: 1rem;
+                padding: 1rem 2rem;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                cursor: pointer;
+                transition: 0.8s;
+                margin-right: 3rem;
+                &:hover {
+                    animation: hoverShake 0.15s linear 3;
+                    > .search-input {
+                        width: 34rem;
+                    }
+                }
+
+                .search-input {
+                    background: transparent;
+                    border: none;
+                    outline: none;
+                    width: 0px;
+                    font-weight: 500;
+                    font-size: $font-size-medium-unique;
+                    transition: 0.8s;
+                }
+
+                .search-btn .fas {
+                    color: #5cbdbb;
+                }
+            }
+
+            .header_btn {
+                @include header_btn();
+            }
+        }
+    }
+}
+
+@media (max-width: 1024px) {
+    .header {
+        .header_container {
+            width: 880px;
+
+            .header_top {
+                .nav {
+                    .nav_link {
+                        margin-right: 3.8rem;
+                        font-size: 12px;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+
+                        &::after {
+                            height: 1px;
+                        }
+                    }
+                }
+
+                .header_interactive {
+                    .search-container {
+                        height: 4.5rem;
+                        padding: 0.8rem 1.6rem;
+                        margin-right: 2rem;
+
+                        &:hover {
+                            > .search-input {
+                                width: 24rem;
+                            }
+                        }
+
+                        .search-input {
+                            font-size: $font-size-small;
+                        }
+                    }
+
+                    .header_btn {
+                        padding: 1.1rem 1.7rem;
+                        font-size: 11.501px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media (max-width: 375px) {
+    .header {
+        .header_container {
+            width: 310px;
+            .header_interactive,
+            .nav {
+                display: none;
+            }
+            .menu-wrap{
+                display: block;
+            }
+        }
+    }
+}
+
+.menu-wrap {
+    position: fixed;
+    top: 0;
+    right: 5px;
+    z-index: 1;
+    display: none;
+    .toggler {
+        position: absolute;
+        top: 0;
+        right: 5px;
+        z-index: 2;
+        cursor: pointer;
+        width: 50px;
+        height: 50px;
+        opacity: 0;
+    }
+    .hamburger {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        width: 60px;
+        height: 60px;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div {
+            position: relative;
+            width: 100%;
+            height: 2px;
+            background-color: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.4s ease;
+            &:before,
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 1;
+                top: -10px;
+                width: 100%;
+                height: 2px;
+                background: inherit;
+            }
+            &:after {
+                top: 10px;
+            }
+        }
+    }
+    .toggler:checked + .hamburger > div {
+        transform: rotate(135deg);
+    }
+    .toggler:checked + .hamburger > div:before,
+    .toggler:checked + .hamburger > div:after {
+        top: 0;
+        transform: rotate(90deg);
+    }
+    .toggler:checked:hover + .hamburger > div {
+        transform: rotate(225deg);
+    }
+    .toggler:checked ~ .menu {
+        visibility: visible;
+    }
+    .toggler:checked ~ .menu > div {
+        transform: scale(1);
+        transition-duration: $menu-speed;
+    }
+    .toggler:checked ~ .menu > div > div {
+        opacity: 1;
+        transition: opacity 0.4s ease;
+    }
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        visibility: hidden;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        & > div {
+            background-color: $overlay-color;
+            width: 200vw;
+            height: 200vw;
+            display: flex;
+            justify-content: center;
+            transform: scale(0);
+            transition: all 0.4s ease;
+            & > div {
+                text-align: center;
+                max-width: 90vw;
+                max-height: 100vh;
+                opacity: 0;
+                transition: opacity 0.4s ease;
+                .nav_mobile {
+                    display: flex;
+                    flex-direction: column;
+                    padding-top: 2rem;
+                    .nav_link__mobile {
+                        font-size: 12px;
+                        color: #606060;
+                        font-family: "Inter", sans-serif;
+                        position: relative;
+                        margin-bottom: 1rem;
+                        font-weight: 500;
+                        text-transform: uppercase;
+                        overflow: hidden;
+                        text-decoration: none;
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                        &:hover {
+                            &::after {
+                                transform: scaleX(1);
+                            }
+                        }
+                    }
+                }
+                .header_interactive__mobile{
+                        display: flex;
+                        align-items: center;
+                        .search-container {
+                            background: #fff;
+                            border-radius: 1rem;
+                            padding: 1.6rem 1.3rem;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            cursor: pointer;
+                            transition: 0.8s;
+                            margin-right: 3rem;
+                            &:hover {
+                                animation: hoverShake 0.15s linear 3;
+                                > .search-input {
+                                    width: 12rem;
+                                }
+                            }
+                            .search-input {
+                                width: 100%;
+                                background: transparent;
+                                border: none;
+                                outline: none;
+                                width: 0px;
+                                font-weight: 500;
+                                font-size: $font-size-medium-unique;
+                                transition: 0.8s;
+                            }
+            
+                            .search-btn .fas {
+                                color: #5cbdbb;
+                            }
+                        }
+            
+                        .header_btn {
+                            @include header_btn();
+                            padding: 1.6rem 1.3rem;
+                            font-size: 11.501px;
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }

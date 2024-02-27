@@ -1,0 +1,60 @@
+@import "../../../cta.scss";
+@import "../../../mixins.scss";
+@import "../../../templates/btn.scss";
+
+.name-holder {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3.5rem;
+    .name {
+        margin-bottom: 2rem;
+        font-size: $font-size-medium;
+        font-weight: 500;
+    }
+    .name_input {
+        border: none;
+        outline: none;
+        flex-basis: fill;
+        padding: 2rem;
+        background-color: $color-light-slate-gray;
+        border-radius: $border-raduis-input;
+        font-size: $font-size-regular;
+        transition: $transition-fast $ease-out;
+        &:hover {
+            transform: scale(1.05);
+            -webkit-transform: scale(1.05);
+            -moz-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            -o-transform: scale(1.05);
+        }
+        &:focus {
+            border: 1.5px solid $color-black;
+            background-color: #fff;
+        }
+        &::placeholder {
+            color: $color-slate-gray;
+        }
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .name-holder {
+        .name {
+            margin-bottom: 1.4rem;
+            font-size: $font-size-tablet-medium;
+        }
+        input {
+            font-size: $font-size-tablet-regular;
+        }
+    }
+}
+@media screen and (max-width:375px){
+    .name-holder {
+        .name {
+            font-size: $font-size-phone-medium;
+        }
+        .name_input {
+            font-size: $font-size-phone-regular;
+        }
+    }
+}
